@@ -15,7 +15,15 @@ jobs:
         with:
           username: krkr
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+      
+      - id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: krkr/ktty
+          flavor: latest=true
+          tags: type=sha,prefix=
+      
       - uses: docker/build-push-action@v5
         with:
           push: true
-          tags: krkr/ktty:latest
+          tags: ${{ steps.meta.outputs.tags }}

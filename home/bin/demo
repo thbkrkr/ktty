@@ -1,0 +1,4 @@
+#!/bin/sh
+tmux new-session -s "🐰" -d
+tmux split-window -v "watch -n5 kubectl get elastic,po"
+tmux -2 attach-session -d 

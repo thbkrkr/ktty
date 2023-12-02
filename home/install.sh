@@ -37,3 +37,4 @@ cp -f $SRCDIR/dotfiles/.[a-z]* $HOME/
 # Copy all utils scripts
 mv $SRCDIR/bin/* /usr/local/bin/
 rmdir $SRCDIR/bin
+

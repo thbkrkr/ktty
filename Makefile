@@ -32,3 +32,4 @@ test-up:
 
 test-del:
 	kubectl delete -f ktty.yaml
+

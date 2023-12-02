@@ -5,7 +5,7 @@ RUN apk --update --no-cache add \
     openssl make git \
     wget curl  \
     tree unzip \
-    iftop htop 
+    iftop htop
 
 ENV KUBECTL_VERSION=1.28.4
 RUN curl -fsSLO https://dl.k8s.io/v${KUBECTL_VERSION}/bin/linux/amd64/kubectl && \
@@ -25,3 +25,4 @@ USER z
 WORKDIR /home/z
 
 CMD ["zsh"]
+

@@ -1,7 +1,8 @@
 ORG 	= krkr
 NAME 	= ktty
 
-TAG     = $(shell echo "$(shell find home -type f | xargs cat | sha1sum) $(shell cat Dockerfile | sha1sum)" | sha1sum | cut -c1-10)
+TAG     = $(shell git rev-parse --short HEAD)
+DIFF    = $(shell echo "$(shell find home -type f | xargs cat | sha1sum) $(shell cat Dockerfile | sha1sum)" | sha1sum | cut -c1-10)
 
 all: build push
 

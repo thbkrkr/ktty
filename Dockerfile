@@ -5,6 +5,7 @@ RUN apk --update --no-cache add \
     openssl make git \
     wget curl  \
     tree unzip \
+    jq yq \
     iftop htop
 
 ENV KUBECTL_VERSION=1.28.4

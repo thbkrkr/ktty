@@ -15,9 +15,14 @@ port-forward-es() {
 }
 
 main() {
-    declare ns=$1 && shift
+    declare ns=default
     declare esName=$1 && shift
     declare uri=$1 && shift
+
+    if [[ "$esName" =~ / ]]; then
+		ns=$(cut -d '/' -f1 <<< $esName)
+		esName=$(cut -d '/' -f2 <<< $esName)
+    fi
 
     trap "exit" INT TERM ERR
     trap "kill 0" EXIT
